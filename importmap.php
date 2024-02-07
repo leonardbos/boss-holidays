@@ -18,13 +18,29 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
-    '@hotwired/stimulus' => [
-        'version' => '3.2.2',
-    ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
     '@hotwired/turbo' => [
         'version' => '7.3.0',
+    ],
+    'chart.js/auto' => [
+        'version' => '4.4.1',
+    ],
+    '@popperjs/core' => [
+        'version' => '2.11.8',
+    ],
+    '@kurkle/color' => [
+        'version' => '0.3.2',
+    ],
+    'bootstrap' => [
+        'version' => '5.3.2',
+    ],
+    'bootstrap/dist/css/bootstrap.min.css' => [
+        'version' => '5.3.2',
+        'type' => 'css',
     ],
 ];

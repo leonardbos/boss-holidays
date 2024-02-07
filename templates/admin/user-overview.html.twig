@@ -1,0 +1,10 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'Users' %}
+{% block main %}
+    {% for user in users %}
+        {{ user.email }}
+    {% else %}
+        No users have been found.
+    {% endfor %}
+{% endblock %}
