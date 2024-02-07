@@ -33,17 +33,12 @@ class UserCrudController extends AbstractCrudController
     #[Route('/all-users', name: 'list_users')]
     public function list(EntityManagerInterface $entityManager): Response
     {
-
         $users = $entityManager->getRepository(User::class)->findAll();
-
-
-
 
         return $this->render(
             'admin/user-overview.html.twig',
             array('users' => $users),
         );
-
 
 //
 //        return $this->render('registration/register.html.twig', [

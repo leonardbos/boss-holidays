@@ -47,7 +47,7 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
             MenuItem::linkToCrud('All users', 'fa fa-user', User::class),
-            MenuItem::linkToRoute('All users (own controller)', 'fa fa-user', 'list_users'),
+            MenuItem::linkToRoute('All users (own method)', 'fa fa-user', 'list_users'),
             MenuItem::linkToUrl('Search in Google', 'fab fa-google', 'https://google.com'),
         ];
         
