@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accomodation{% endblock %}
+
+{% block body %}
+    <h1>Accomodation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ accomodation.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ accomodation.Title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ accomodation.Description }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ accomodation.Location }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ accomodation.Type }}</td>
+            </tr>
+            <tr>
+                <th>PricePerNight</th>
+                <td>{{ accomodation.PricePerNight }}</td>
+            </tr>
+            <tr>
+                <th>NumberOfRooms</th>
+                <td>{{ accomodation.NumberOfRooms }}</td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td>{{ accomodation.Capacity }}</td>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>{{ accomodation.Rating }}</td>
+            </tr>
+            <tr>
+                <th>ContactInformation</th>
+                <td>{{ accomodation.ContactInformation }}</td>
+            </tr>
+            <tr>
+                <th>CheckInTime</th>
+                <td>{{ accomodation.CheckInTime ? accomodation.CheckInTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CheckOutTime</th>
+                <td>{{ accomodation.CheckOutTime ? accomodation.CheckOutTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Policies</th>
+                <td>{{ accomodation.Policies }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ accomodation.Latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ accomodation.Longitude }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ accomodation.CreatedAt ? accomodation.CreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ accomodation.UpdatedAt ? accomodation.UpdatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_accomodation_index') }}">back to list</a>
+
+    <a href="{{ path('app_accomodation_edit', {'id': accomodation.id}) }}">edit</a>
+
+    {{ include('accomodation/_delete_form.html.twig') }}
+{% endblock %}

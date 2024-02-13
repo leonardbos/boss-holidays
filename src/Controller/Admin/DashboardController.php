@@ -2,9 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Accomodation;
 use App\Entity\User;
-use App\Controller\UserCrudController;
-
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -47,6 +46,7 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
             MenuItem::linkToCrud('All users', 'fa fa-user', User::class),
+            MenuItem::linkToCrud('Accomodations', 'fa-solid fa-house-chimney-window', Accomodation::class),
             MenuItem::linkToRoute('All users (own method)', 'fa fa-user', 'list_users'),
             MenuItem::linkToUrl('Search in Google', 'fab fa-google', 'https://google.com'),
         ];

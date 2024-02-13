@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accomodation index{% endblock %}
+
+{% block body %}
+    <h1>Accomodation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>PricePerNight</th>
+                <th>NumberOfRooms</th>
+                <th>Capacity</th>
+                <th>Rating</th>
+                <th>ContactInformation</th>
+                <th>CheckInTime</th>
+                <th>CheckOutTime</th>
+                <th>Policies</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for accomodation in accomodations %}
+            <tr>
+                <td>{{ accomodation.id }}</td>
+                <td>{{ accomodation.Title }}</td>
+                <td>{{ accomodation.Description }}</td>
+                <td>{{ accomodation.Location }}</td>
+                <td>{{ accomodation.Type }}</td>
+                <td>{{ accomodation.PricePerNight }}</td>
+                <td>{{ accomodation.NumberOfRooms }}</td>
+                <td>{{ accomodation.Capacity }}</td>
+                <td>{{ accomodation.Rating }}</td>
+                <td>{{ accomodation.ContactInformation }}</td>
+                <td>{{ accomodation.CheckInTime ? accomodation.CheckInTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ accomodation.CheckOutTime ? accomodation.CheckOutTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ accomodation.Policies }}</td>
+                <td>{{ accomodation.Latitude }}</td>
+                <td>{{ accomodation.Longitude }}</td>
+                <td>{{ accomodation.CreatedAt ? accomodation.CreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ accomodation.UpdatedAt ? accomodation.UpdatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_accomodation_show', {'id': accomodation.id}) }}">show</a>
+                    <a href="{{ path('app_accomodation_edit', {'id': accomodation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_accomodation_new') }}">Create new</a>
+{% endblock %}
